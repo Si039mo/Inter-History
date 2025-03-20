@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storia dei Loghi dell'Inter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            color: white;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('inter.png') no-repeat center center fixed;
+            background-size: cover;
+            z-index: -1;
+        }
+
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: -1;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 150px 20px 100px; /* Aumentato il padding per più spazio */
+            position: relative;
+            z-index: 1;
+            background: rgba(0, 0, 0, 0.6);
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero .cta-button {
+            background-color: #0120a0; /* Colore nerazzurro */
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero .cta-button:hover {
+            background-color: #00196b; /* Colore più scuro al passaggio del mouse */
+        }
+
+        .logo-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+        }
+
+        .logo-card {
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            width: 150px;
+            height: 150px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .logo-card img {
+            width: 100px;
+            height: auto;
+        }
+
+        .user-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            color: white;
+        }
+
+        .user-icon i {
+            font-size: 24px;
+            color: white;
+        }
+
+        .menu {
+            position: fixed;
+            top: 0;
+            left: -250px;
+            width: 250px;
+            height: 100%;
+            background: rgba(1, 30, 160, 1);
+            font-weight: bold;
+            padding-top: 60px;
+            transition: left 0.3s ease-in-out;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+        }
+
+        .menu.open {
+            left: 0;
+        }
+
+        .close-button {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            padding: 0;
+            z-index: 1001;
+        }
+
+        .close-button:hover {
+            color: #ccc;
+        }
+
+        .menu a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 15px;
+        }
+
+        .menu-button {
+            position: fixed;
+            top: 10px;
+            left: 20px;
+            background: rgb(1, 30, 160);
+            color: white;
+            padding: 10px;
+            border: none;
+            font-size: 18px;
+            cursor: pointer;
+            z-index: 1001;
+            font-weight: bold;
+        }
+
+        .menu-button:hover {
+            background: rgb(1, 21, 109);
+            transition: background 0.3s ease;
+        }
+
+        .logo-card:hover {
+            background: rgba(0, 0, 0, 1);
+            transition: background 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <button class="menu-button" onclick="toggleMenu()">&#9776;</button>
+    <div class="menu" id="sideMenu">
+        <button class="close-button" onclick="toggleMenu()">X</button>
+        <a href="#fondazione">Storia</a>
+        <a href="Index.html">Loghi</a>
+        <a href="accedi.html?redirect=Index.html" id="sidebarLoginLink">Accedi</a>
+        <a href="#" id="sidebarLogoutLink" style="display: none;">Logout</a>
+        <div class="search-bar">
+            <input type="text" placeholder="Cerca...">
+        </div>
+    </div>
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <!-- Altri link della navbar -->
+            </ul>
+            <div class="user-icon" id="userIcon">
+                <a href="#" id="loginLink">
+                    <i class="fas fa-user"></i>
+                    <span id="logoutText" style="display: none;color:white;">Logout</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- Sezione Hero -->
+        <section class="hero">
+            <h1>Benvenuti nella storia dei loghi dell'Inter</h1>
+            <p>Esplora l'evoluzione dello stemma nerazzurro dal 1908 ad oggi. Scopri i dettagli, le curiosità e i significati dietro ogni logo che ha segnato la storia del club.</p>
+            <button class="cta-button" onclick="location.href='loghi.html'">Scopri i Loghi</button>
+        </section>
+
+        <!-- Banner per la registrazione -->
+        <div class="banner">
+            <h2>Registrati al nostro sito</h2>
+            <p>Commenta i loghi e raccontaci le tue storie!</p>
+            <ul>
+                <li>💬 Lascia i tuoi commenti sui loghi</li>
+                <li>📣 Condividi i tuoi ricordi sul club nerazzurro!</li>
+                <li>📥 Suggeriscici nuove informazioni</li>
+            </ul>
+            <button onclick="location.href='registrati.html'">Registrati</button>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 Storia dei Loghi dell'Inter.</p>
+            <ul class="footer-links">
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="termini.html">Termini e Condizioni</a></li>
+                <li><a href="contatti.html">Contatti</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/" target="_blank">Facebook</a> |
+                <a href="https://www.twitter.com/" target="_blank">Twitter</a> |
+                <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const sideMenu = document.getElementById('sideMenu');
+            sideMenu.classList.toggle('open');
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const isLoggedIn = urlParams.has('fromLogin');
+
+            // Aggiorna tutti i link delle pagine dei loghi
+            const logoCards = document.querySelectorAll('.logo-card');
+            logoCards.forEach(card => {
+                card.onclick = function() {
+                    const href = card.getAttribute('data-href');
+                    window.location.href = href + (isLoggedIn ? '?fromLogin=true' : '');
+                };
+            });
+
+            // Gestione del login/logout
+            const userIcon = document.getElementById('userIcon');
+            const loginLink = document.getElementById('loginLink');
+            const logoutText = document.getElementById('logoutText');
+            const sidebarLoginLink = document.getElementById('sidebarLoginLink');
+            const sidebarLogoutLink = document.getElementById('sidebarLogoutLink');
+
+            if (isLoggedIn) {
+                if (logoutText) logoutText.style.display = 'inline';
+                if (sidebarLoginLink) sidebarLoginLink.style.display = 'none';
+                if (sidebarLogoutLink) sidebarLogoutLink.style.display = 'inline';
+            } else {
+                if (logoutText) logoutText.style.display = 'none';
+                if (sidebarLoginLink) sidebarLoginLink.style.display = 'inline';
+                if (sidebarLogoutLink) sidebarLogoutLink.style.display = 'none';
+            }
+
+            if (userIcon) {
+                userIcon.addEventListener('click', function(event) {
+                    if (isLoggedIn) {
+                        event.preventDefault();
+                        if (confirm("Sei sicuro di voler effettuare il logout?")) {
+                            window.location.href = "Index.html";
+                        }
+                    } else {
+                        window.location.href = "accedi.html";
+                    }
+                });
+            }
+
+            if (sidebarLogoutLink) {
+                sidebarLogoutLink.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    if (confirm("Sei sicuro di voler effettuare il logout?")) {
+                        window.location.href = "Index.html";
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>

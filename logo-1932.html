@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logo Inter 1932-1945</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: url('inter.png') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .container {
+            position: relative;
+            max-width: 600px;
+            margin: 100px auto;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+        }
+        .logo-img {
+            width: 200px;
+            height: auto;
+        }
+        .info-box {
+            margin-top: 20px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            text-align: left;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <button class="menu-button" onclick="toggleMenu()">&#9776;</button>
+    <div class="menu" id="sideMenu">
+        <button class="close-button" onclick="toggleMenu()">X</button>
+        <a href="Index.html">Home</a>
+        <a href="loghi.html">Loghi</a>
+        <a href="accedi.html" id="sidebarLoginLink">Accedi</a> 
+        <a href="#" id="sidebarLogoutLink" style="display: none;">Logout</a>
+        <div class="search-bar">
+            <input type="text" placeholder="Cerca...">
+        </div>
+    </div>
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <!-- Altri link della navbar -->
+            </ul>
+            <div class="user-icon" id="userIcon">
+                <a href="#" id="loginLink">
+                    <i class="fas fa-user"></i>
+                    <span id="logoutText" style="display: none;color:white;">Logout</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <a href="logo-1929.html" class="arrow arrow-left">⬅</a>
+        <img src="logo-inter-1932.png" alt="Logo Inter 1932-1945" class="logo-img">
+        <div class="info-box">
+            <h2>Logo Inter 1932-1945</h2>
+            <p>Questo è il primo logo dell'Inter, introdotto nel 1908. Presenta un design circolare con le iniziali del club intrecciate.</p>
+        </div>
+        <a href="logo-1945.html" class="arrow arrow-right">➡</a> 
+        <a href="loghi.html" id="homeLink" class="a">← Torna ai loghi</a>
+
+        <!-- Sezione Commenti -->
+        <div class="comments-section">
+            <h3>Commenti</h3>
+            <div id="commentFormContainer">
+                <!-- Il form sarà inserito qui dinamicamente tramite JavaScript -->
+            </div>
+            <div class="comment-list" id="commentList">
+                <!-- I commenti esistenti saranno inseriti qui -->
+            </div>
+            <div class="login-prompt" id="loginPrompt" style="display: none;">
+                <a href="accedi.html?redirect=logo-1932.html" id="sidebarLoginLink">Accedi</a> o <a href="registrati.html">registrati</a>.</p>
+            </div>
+        </div>
+        <!-- Sezione FanBox -->
+        <div class="fanbox-section">
+            <h3>FanBox</h3>
+            <div id="fanboxFormContainer"></div>
+            <div class="fanbox-posts" id="fanboxPosts"></div>
+            <div class="login-prompt" id="fanboxLoginPrompt" style="display: none;">
+                <a href="accedi.html?redirect=logo-1908.html">Accedi</a> o <a href="registrati.html">registrati</a> per condividere la tua esperienza.
+            </div>
+        </div>
+    </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 Storia dei Loghi dell'Inter.</p>
+            <ul class="footer-links">
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="termini.html">Termini e Condizioni</a></li>
+                <li><a href="contatti.html">Contatti</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/" target="_blank">Facebook</a> |
+                <a href="https://www.twitter.com/" target="_blank">Twitter</a> |
+                <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const sideMenu = document.getElementById('sideMenu');
+            sideMenu.classList.toggle('open');
+        }
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            // CONTROLLA IL LOGIN DAL localStorage (è persistente)
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    
+            const userIcon = document.getElementById('userIcon');
+            const logoutText = document.getElementById('logoutText');
+            const sidebarLoginLink = document.getElementById('sidebarLoginLink');
+            const sidebarLogoutLink = document.getElementById('sidebarLogoutLink');
+    
+            // AGGIORNA LA UI in base allo stato login
+            if (isLoggedIn) {
+                if (logoutText) logoutText.style.display = 'inline';
+                if (sidebarLoginLink) sidebarLoginLink.style.display = 'none';
+                if (sidebarLogoutLink) sidebarLogoutLink.style.display = 'inline';
+            } else {
+                if (logoutText) logoutText.style.display = 'none';
+                if (sidebarLoginLink) sidebarLoginLink.style.display = 'inline';
+                if (sidebarLogoutLink) sidebarLogoutLink.style.display = 'none';
+            }
+    
+            // GESTIONE LOGIN/LOGOUT cliccando sull'icona utente
+            if (userIcon) {
+                userIcon.addEventListener('click', function(event) {
+                    if (isLoggedIn) {
+                        event.preventDefault();
+                        if (confirm("Sei sicuro di voler effettuare il logout?")) {
+                            localStorage.removeItem('isLoggedIn');
+                            window.location.href = "Index.html";
+                        }
+                    } else {
+                        window.location.href = "accedi.html";
+                    }
+                });
+            }
+    
+            // LOGOUT dalla sidebar
+            if (sidebarLogoutLink) {
+                sidebarLogoutLink.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    if (confirm("Sei sicuro di voler effettuare il logout?")) {
+                        localStorage.removeItem('isLoggedIn');
+                        window.location.href = "Index.html";
+                    }
+                });
+            }
+    
+            // LOGIN quando sei sulla pagina accedi.html
+            if (window.location.pathname.includes('accedi.html')) {
+                localStorage.setItem('isLoggedIn', 'true');
+                window.location.href = "Index.html";
+            }
+    
+            // GESTIONE CLICK CARD LOGHI (se ci sono)
+            const logoCards = document.querySelectorAll('.logo-card');
+            logoCards.forEach(card => {
+                card.onclick = function() {
+                    const href = card.getAttribute('data-href');
+                    window.location.href = href;
+                };
+            });
+            // Gestione del form dei commenti
+            const commentFormContainer = document.getElementById('commentFormContainer');
+            const loginPrompt = document.getElementById('loginPrompt');
+
+            // Gestione del form della FanBox
+            const fanboxFormContainer = document.getElementById('fanboxFormContainer');
+            const fanboxLoginPrompt = document.getElementById('fanboxLoginPrompt');
+
+            if (isLoggedIn) {
+                // Mostra il form dei commenti
+                if (commentFormContainer) {
+                    commentFormContainer.innerHTML = `
+                        <form class="comment-form" id="commentForm">
+                            <textarea placeholder="Aggiungi un commento..." rows="4" required></textarea>
+                            <button type="submit">Invia</button>
+                        </form>
+                    `;
+
+                    document.getElementById('commentForm').addEventListener('submit', function(event) {
+                        event.preventDefault();
+                        const commentText = document.querySelector('#commentForm textarea').value;
+                        if (commentText.trim() !== '') {
+                            const commentList = document.getElementById('commentList');
+                            const newComment = document.createElement('div');
+                            newComment.classList.add('comment');
+                            newComment.innerHTML = `
+                                <div class="author">Utente Loggato</div>
+                                <p>${commentText}</p>
+                            `;
+                            commentList.appendChild(newComment);
+                            document.querySelector('#commentForm textarea').value = '';
+                        }
+                    });
+                }
+
+                // Mostra il form della FanBox
+                if (fanboxFormContainer) {
+                    fanboxFormContainer.innerHTML = `
+                        <form class="fanbox-form" id="fanboxForm">
+                            <textarea placeholder="Racconta la tua esperienza..." rows="4" required></textarea>
+                            <input type="file" id="fanboxImage" accept="image/*">
+                            <button type="submit">Condividi</button>
+                        </form>
+                    `;
+
+                    document.getElementById('fanboxForm').addEventListener('submit', function(event) {
+                        event.preventDefault();
+                        const postText = document.querySelector('#fanboxForm textarea').value;
+                        const imageFile = document.querySelector('#fanboxImage').files[0];
+
+                        if (postText.trim() !== '' || imageFile) {
+                            const fanboxPosts = document.getElementById('fanboxPosts');
+                            const newPost = document.createElement('div');
+                            newPost.classList.add('fanbox-post');
+
+                            let imageHTML = '';
+                            if (imageFile) {
+                                const reader = new FileReader();
+                                reader.onload = function(e) {
+                                    imageHTML = `<img src="${e.target.result}" alt="Immagine post">`;
+                                    newPost.innerHTML = `
+                                        <div class="author">Utente Loggato</div>
+                                        <div class="date">${new Date().toLocaleString()}</div>
+                                        <p>${postText}</p>
+                                        ${imageHTML}
+                                    `;
+                                    fanboxPosts.appendChild(newPost);
+                                };
+                                reader.readAsDataURL(imageFile);
+                            } else {
+                                newPost.innerHTML = `
+                                    <div class="author">Utente Loggato</div>
+                                    <div class="date">${new Date().toLocaleString()}</div>
+                                    <p>${postText}</p>
+                                `;
+                                fanboxPosts.appendChild(newPost);
+                            }
+
+                            document.querySelector('#fanboxForm textarea').value = '';
+                            document.querySelector('#fanboxImage').value = '';
+                        }
+                    });
+                }
+            } else {
+                // Mostra i messaggi per accedere
+                if (loginPrompt) loginPrompt.style.display = 'block';
+                if (fanboxLoginPrompt) fanboxLoginPrompt.style.display = 'block';
+            }
+
+            
+        });
+    </script>
+</body>
+</html>
