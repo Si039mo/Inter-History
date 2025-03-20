@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Storia dei Loghi dell'Inter</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+      body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    position: relative; /* Necessario per il posizionamento del pseudo-elemento */
+    min-height: 100vh; /* Assicura che il body copra l'intera altezza della viewport */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('inter.png') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1; 
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Ombreggiatura nera con opacità 0.6 */
+    z-index: -1; /* Manda l'ombreggiatura dietro al contenuto */
+}
+        .logo-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 20px;
+            margin-top: 10px;
+        }
+        .logo-card {
+            background-color: rgba(0, 0,0, 0.7);
+            padding: 20px;
+            border-radius: 10px;
+            width: 150px;
+            height: 150px;
+            text-align: center;
+            cursor: pointer;
+        }
+        .logo-card img {
+            width: 100px;
+            height: auto;
+        }  .user-icon {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            cursor: pointer;
+            color:white;
+        }
+        .user-icon i {
+            font-size: 24px;
+            color:white;
+        }
+        .menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Menu nascosto inizialmente */
+    width: 250px;
+    height: 100%;
+    background: rgba(1, 30, 160, 1); /* Colore di sfondo */
+    font-weight: bold;
+    padding-top: 60px; /* Spazio per il close button */
+    transition: left 0.3s ease-in-out; /* Animazione */
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.menu.open {
+    left: 0; /* Mostra il menu */
+}
+
+.close-button {
+    position: absolute;
+    top: 20px; /* Distanza dal bordo superiore */
+    right: 20px; /* Distanza dal bordo destro */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001; /* Assicura che il pulsante sia sopra il menu */
+}
+
+.close-button:hover {
+    color: #ccc; /* Cambia colore al passaggio del mouse */
+}
+.menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+}
+
+.menu-button {
+    position: fixed; /* Cambiato da absolute a fixed */
+    top: 10px;
+    left: 20px;
+    background: rgb(1, 30, 160, 255);
+    color: white;
+    padding: 10px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 1001; 
+    font-weight:bold;
+}     .menu-button:hover {
+    background: rgb(1, 21, 109); /* Nero scuro al passaggio del mouse */
+    transition: background 0.3s ease;
+}
+
+.logo-card:hover {
+    background: rgba(0, 0, 0, 1); /* Evidenzia con un effetto chiaro */
+    transition: background 0.3s ease;
+} 
+
+    </style>
+</head>
+<body>
+    <button class="menu-button" onclick="toggleMenu()">&#9776;</button>
+    <div class="menu" id="sideMenu">
+        <button class="close-button" onclick="toggleMenu()">X</button>
+        <a href="Index.html">Home</a>
+        <a href="Index.html#Fondazione">Storia</a>
+        <a href="accedi.html?redirect=Index.html" id="sidebarLoginLink">Accedi</a>
+                <a href="#" id="sidebarLogoutLink" style="display: none;">Logout</a>
+        <div class="search-bar">
+            <input type="text" placeholder="Cerca...">
+        </div>
+    </div>
+    <header>
+        <nav class="navbar">
+            <ul class="nav-links">
+                <!-- Altri link della navbar -->
+            </ul>
+            <div class="user-icon" id="userIcon">
+                <a href="#" id="loginLink">
+                    <i class="fas fa-user"></i>
+                    <span id="logoutText" style="display: none;color:white;">Logout</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+    <main>
+
+    <section class="hero2">
+        <h1 id="logo">L'evoluzione del logo</h1>
+        <p>Clicca su uno stemma ed entra nella storia con noi....</p>
+        <button class="cta-button" onclick="location.href='Index.html'">Home</button>
+    </section>
+
+        <section class="logo-container">
+            <div class="logo-card" data-href="logo-1908.html">
+                <img src="logo-inter-1908.svg" alt="Logo 1908-1928">
+                <p>1908-1928</p>
+            </div>
+            <div class="logo-card" data-href="logo-1928.html">
+            <img src="logo-inter-1928.svg" alt="Logo 1928-1929">
+                <p>1928-1929</p>
+            </div>
+            <div class="logo-card" data-href="logo-1929.html">
+                <img src="logo-inter-1929.png" alt="Logo 1929-1932">
+                <p>1929-1932</p>
+            </div>
+            <div class="logo-card" data-href="logo-1932.html">
+                <img src="logo-inter-1932.png" alt="Logo 1932-1945">
+                <p>1932-1945</p>
+            </div>
+            <div class="logo-card" data-href="logo-1945.html">
+                <img src="logo-inter-1945.svg" alt="Logo 1945">
+                <p>1945-1960</p>
+            </div>
+            <div class="logo-card" data-href="logo-1960.html">
+                <img src="logo-inter-1960.png" alt="Logo 1960">
+                <p>1960-1961</p>
+            </div>
+            <div class="logo-card" data-href="logo-1961.html">
+                <img src="logo-inter-1961.png" alt="Logo 1961">
+                <p>1961-1963</p>
+            </div>
+            <div class="logo-card" data-href="logo-1963.html">
+                <img src="logo-inter-1963.png" alt="Logo 1963">
+                <p>1963-1979</p>
+            </div>
+            <div class="logo-card" data-href="logo-1979.html/">
+                <img src="logo-inter-1979.svg" alt="Logo 1979">
+                <p>1979-1988</p>
+            </div>
+            <div class="logo-card" data-href="logo-1988.html">
+                <img src="logo-inter-1988.png" alt="Logo 1988">
+                <p>1988-1989</p>
+            </div>
+            <div class="logo-card" data-href="logo-1989.html">
+                <img src="logo-inter-1989.png" alt="Logo 1989">
+                <p>1989-1999</p>
+            </div>
+            <div class="logo-card" data-href="logo-1999.html">
+                <img src="logo-inter-1999.png" alt="Logo 1999">
+                <p>1999-2007</p>
+            </div>
+            <div class="logo-card" data-href="logo-2007.html">
+                <img src="logo-inter-2007.png" alt="Logo 2007">
+                <p>2007-2014</p>
+            </div>
+            <div class="logo-card" data-href="logo-2014.html">
+                <img src="logo-inter-2014.png" alt="Logo 2014">
+                <p>2014-2021</p>
+            </div>
+            <div class="logo-card" data-href="logo-2021.html">
+                <img src="logo-inter-2021.png" alt="Logo 2021">
+                <p>2021-</p>
+            </div>
+        </section>
+    </main>
+    <div class="banner">
+     
+        <h2>Registrati al sito</h2>
+        <p>Scendi in campo con noi!</p>
+         <p>   Commenta i loghi e raccontaci le tue storie</p>
+        <ul>
+            <li>💬 Lascia i tuoi commenti sui loghi</li>
+            <li>📣 Condividi i tuoi ricordi sul club nerazzurro!</li> 
+            <li>📥 Suggeriscici nuove informazioni</li>
+        </ul>
+        <button onclick="location.href='registrati.html'">Registrati</button>
+    </div>
+
+    <footer>
+        <div class="footer-container">
+            <p>&copy; 2025 Storia dei Loghi dell'Inter.</p>
+            <ul class="footer-links">
+                <li><a href="privacy.html">Privacy Policy</a></li>
+                <li><a href="termini.html">Termini e Condizioni</a></li>
+                <li><a href="contatti.html">Contatti</a></li>
+            </ul>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/" target="_blank">Facebook</a> |
+                <a href="https://www.twitter.com/" target="_blank">Twitter</a> |
+                <a href="https://www.instagram.com/" target="_blank">Instagram</a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function toggleMenu() {
+            const sideMenu = document.getElementById('sideMenu');
+            sideMenu.classList.toggle('open');
+        }
+    
+        document.addEventListener('DOMContentLoaded', function() {
+            // CONTROLLA IL LOGIN DAL localStorage (è persistente)
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    
+            const userIcon = document.getElementById('userIcon');
+            const logoutText = document.getElementById('logoutText');
+            const sidebarLoginLink = document.getElementById('sidebarLoginLink');
+            const sidebarLogoutLink = document.getElementById('sidebarLogoutLink');
+    
+            // AGGIORNA LA UI in base allo stato login
+            if (isLoggedIn) {
+                if (logoutText) logoutText.style.display = 'inline';
+                if (sidebarLoginLink) sidebarLoginLink.style.display = 'none';
+                if (sidebarLogoutLink) sidebarLogoutLink.style.display = 'inline';
+            } else {
+                if (logoutText) logoutText.style.display = 'none';
+                if (sidebarLoginLink) sidebarLoginLink.style.display = 'inline';
+                if (sidebarLogoutLink) sidebarLogoutLink.style.display = 'none';
+            }
+    
+            // GESTIONE LOGIN/LOGOUT cliccando sull'icona utente
+            if (userIcon) {
+                userIcon.addEventListener('click', function(event) {
+                    if (isLoggedIn) {
+                        event.preventDefault();
+                        if (confirm("Sei sicuro di voler effettuare il logout?")) {
+                            localStorage.removeItem('isLoggedIn');
+                            window.location.href = "Index.html";
+                        }
+                    } else {
+                        window.location.href = "accedi.html";
+                    }
+                });
+            }
+    
+            // LOGOUT dalla sidebar
+            if (sidebarLogoutLink) {
+                sidebarLogoutLink.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    if (confirm("Sei sicuro di voler effettuare il logout?")) {
+                        localStorage.removeItem('isLoggedIn');
+                        window.location.href = "Index.html";
+                    }
+                });
+            }
+    
+            // LOGIN quando sei sulla pagina accedi.html
+            if (window.location.pathname.includes('accedi.html')) {
+                localStorage.setItem('isLoggedIn', 'true');
+                window.location.href = "Index.html";
+            }
+    
+            // GESTIONE CLICK CARD LOGHI (se ci sono)
+            const logoCards = document.querySelectorAll('.logo-card');
+            logoCards.forEach(card => {
+                card.onclick = function() {
+                    const href = card.getAttribute('data-href');
+                    window.location.href = href;
+                };
+            });
+        });
+    </script>
+    
+</body>
+</html>
