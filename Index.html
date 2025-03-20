@@ -6,144 +6,234 @@
     <title>Storia dei Loghi dell'Inter</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background: url('inter.png') no-repeat center center fixed;
-            background-size: cover;
-            color: white;
-            margin: 0;
-            padding: 0;
-        }
-        .navbar {
-            display: flex;
-            justify-content: flex-start;
-            align-items: center;
-            padding: 15px 30px;
-            background: black;
-            position: fixed;
-            width: 100%;
-            top: 0;
-            left: 0;
-        }
-        .nav-links {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-            padding-left: 10px;
-        }
-        .nav-links li a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
-        .hero {
-            text-align: center;
-            padding: 100px 20px 50px;
-            background: rgba(0, 0, 0, 0.5);
-        }
-        .logo-container {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-            padding: 20px;
-        }
-        .logo-card {
-    background-color: rgba(0, 0, 0, 0.8);
-    padding: 20px;
-    border-radius: 10px;
-    width: 150px;
-    height: 150px;
-    text-align: center;
+      body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+    position: relative; /* Necessario per il posizionamento del pseudo-elemento */
+    min-height: 100vh; /* Assicura che il body copra l'intera altezza della viewport */
+}
+
+body::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('inter.png') no-repeat center center fixed;
+    background-size: cover;
+    z-index: -1; 
+   
+}
+
+body::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Ombreggiatura nera con opacità 0.6 */
+    z-index: -1; /* Manda l'ombreggiatura dietro al contenuto */
+}
+ .menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Menu nascosto inizialmente */
+    width: 250px;
+    height: 100%;
+    background: rgba(1, 30, 160, 1); /* Colore di sfondo */
+    font-weight: bold;
+    padding-top: 60px; /* Spazio per il close button */
+    transition: left 0.3s ease-in-out; /* Animazione */
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.menu.open {
+    left: 0; /* Mostra il menu */
+}
+
+.close-button {
+    position: absolute;
+    top: 20px; /* Distanza dal bordo superiore */
+    right: 20px; /* Distanza dal bordo destro */
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
     cursor: pointer;
-      }.logo-card img {
-            width: 100px;
-            height: auto;
+    padding: 0;
+    z-index: 1001; /* Assicura che il pulsante sia sopra il menu */
+}
+
+        .close-button:hover {
+    color: #ccc; /* Cambia colore al passaggio del mouse */
+}    .video-section {
+    background: url('coreo3.webp') center/cover no-repeat fixed;
+    padding: 70px;
+}
+
+.video-text {
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.8rem;
+    text-shadow: 3px 3px 4px rgba(0, 0, 0, 1); /* Ombra scura */
+
+}
+
+.video-container {
+    padding: 50px;
+    text-align: center;
+}
+
+.video-wrapper {
+            position: relative;
+            width: 40%;
+            padding-bottom: 25%; /* Proporzione 16:9 per il video */
+            height: 0;
+            overflow: hidden;
+            max-width: 1000px; /* Larghezza massima del video */
+            margin: 0 auto; /* Centra il video */
         }
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .video-container h2 {
+                font-size: 1.5rem;
+            }
+        } 
+   
     </style>
 </head>
 <body>
+    <button class="menu-button" onclick="toggleMenu()">&#9776;</button>
+    <div class="menu" id="sideMenu">
+        <button class="close-button" onclick="toggleMenu()">X</button>
+        <a href="loghi.html">Loghi</a>
+        <a href="#Fondazione">Storia</a>
+        <a href="accedi.html?redirect=Index.html" id="sidebarLoginLink">Accedi</a>
+                <a href="#" id="sidebarLogoutLink" style="display: none;">Logout</a>
+        <div class="search-bar">
+            <input type="text" placeholder="Cerca...">
+        </div>
+    </div>
     <header>
         <nav class="navbar">
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="loghi.html">Loghi</a></li>
-                <li><a href="storia.html">Storia</a></li>
+                <!-- Altri link della navbar -->
             </ul>
+            <div class="user-icon" id="userIcon">
+                <a href="#" id="loginLink">
+                    <i class="fas fa-user"></i>
+                    <span id="logoutText" style="display: none;color:white;">Logout</span>
+                </a>
+            </div>
         </nav>
     </header>
     <main>
         <section class="hero">
-            <h1>Storia dei Loghi dell'Inter</h1>
-            <p>Scopri l'evoluzione dei loghi della squadra nel corso degli anni.</p>
+            <h1>Benvenuti su InterHistory</h1>
+            <p>Esplora l'evoluzione dello stemma nerazzurro dal 1908 ad oggi. 
+                Commenta e condividi i tuoi racconti legati al logo nerazzurro nella FanBox dedicata. 
+            </p>
+            <button class="cta-button" onclick="location.href='loghi.html'" background-color: #00196b>Scopri i Loghi</button>
         </section>
-        <section class="logo-container">
-            <div class="logo-card" onclick="location.href='logo-1908.html'">
-                <img src="logo-inter-1908.svg" alt="Logo 1908-1928">
-                <p>1908-1928</p>
-            </div>
-            <div class="logo-card" onclick="location.href='logo-1928.html'">
-                <img src="logo-inter-1928.svg" alt="Logo 1928-1929">
-                <p>1928-1929</p>
-            </div>
-            <div class="logo-card" onclick="location.href='logo-1932.html'">
-                <img src="logo-inter-1929.png" alt="Logo 1929-1932">
-                <p>1929-1932</p>
-            </div>
-            <div class="logo-card" onclick="location.href='logo-1932.html'">
-                <img src="logo-inter-1932.png" alt="Logo 1932-1945">
-                <p>1932-1945</p>
-            </div>
-            <div class="logo-card" onclick="location.href='logo-1945.html'">
-                <img src="logo-inter-1945.svg" alt="Logo 1945">
-                <p>1945-1960</p>
-            </div>
-            <div class="logo-card" onclick="location.href='logo-1960.html'">
-                <img src="logo-inter-1960.png" alt="Logo 1960">
-                <p>1960-1961</p>
-            </div>
-            <div class="logo-card" onclick="location.href='logo-1961.html'">
-                <img src="logo-inter-1961.png" alt="Logo 1961">
-                <p>1961-1963</p>
-            </div>
-            <div class="logo-card" onclick="location.href='logo-1963.html'">
-                <img src="logo-inter-1963.png" alt="Logo 1963">
-                <p>1963-1979</p>
-            </div>
-            <div class="logo-card" onclick="location.href='logo-1979.html'">
-                <img src="logo-inter-1979.svg" alt="Logo 1979">
-                <p>1979-1988</p>
-            </div>
-            <div class="logo-card" onclick="location.href='logo-1988.html'">
-                <img src="logo-inter-1988.png" alt="Logo 1988">
-                <p>1988-1989</p>
-            </div>
-            <div class="logo-card" onclick="location.href='logo-1989.html'">
-                <img src="logo-inter-1989.png" alt="Logo 1989">
-                <p>1989-1999</p>
-            </div>
-            <div class="logo-card" onclick="location.href='logo-1999.html'">
-                <img src="logo-inter-1999.png" alt="Logo 1999">
-                <p>1999-2007</p>
-            </div>
-            <div class="logo-card" onclick="location.href='logo-2007.html'">
-                <img src="logo-inter-2007.png" alt="Logo 2007">
-                <p>2007-2014</p>
-            </div>
-            <div class="logo-card" onclick="location.href='logo-2014.html'">
-                <img src="logo-inter-2014.png" alt="Logo 2014">
-                <p>2014-2021</p>
-            </div>
-            <div class="logo-card" onclick="location.href='logo-2021.html'">
-                <img src="logo-inter-2021.png" alt="Logo 2021">
-                <p>2021-</p>
-            </div>
-        </section>
+
+        <!-- CONTENITORE UNICO CON SFONDO UNIFICATO -->
+<div class="video-section">
+    <div class="video-text">
+        <h2>Le ultime dal campo</h2>
+    </div>
+
+    <div class="video-container">
+        <div class="video-wrapper">
+            <iframe
+                src="https://www.youtube.com/embed/J1wUq7bdAak" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+        </div>
+    </div>
+</div>
+<div class="history-section">
+ <div class="title">La Fondazione</div> 
+
+    <div class="content">   
+
+        <div class="images-column">
+            <img src="fondatori-inter.jpg" alt="Fondatori Inter">
+            <img src="inter1908.jpg" alt="Squadra Epoca">
+        </div>
+        <div class="text">
+        
+     
+                 <p>L9 Marzo 1908: al ristorante milanese L’Orologio, 44 commensali stanno per scrivere una delle più belle pagine di storia
+                     del calcio italiano. Sono tutti dirigenti dissidenti del Milan, distaccatisi in segno di ribellione alla decisione della
+                     società rossonera di vietare l’arruolamento di ulteriori giocatori stranieri in rosa. L’idea che riunisce il gruppo è tanto
+                     semplice quanto ambiziosa: fondare una seconda squadra di calcio con sede nel capoluogo lombardo. Per risaltare il contrasto
+                     con i cugini del Milan, si decide che i colori sociali saranno l’azzurro e il nero, perché al tempo è comune usare una
+                     matita che ha una punta rossa e una, appunto, azzurra. Lo spunto sulle tonalità viene proprio da un pittore, un certo 
+                     Giorgio Muggiani, che per sancire la fondazione dichiarerà:«Questa notte splendida darà i colori al nostro stemma: il nero e
+                     l’azzurro sullo sfondo d’oro delle stelle. Si chiamerà Internazionale, perché noi siamo fratelli del mondo.»
+          </p>
+           <p> 
+            
+           </p>
+       
+          <i>«È il titolo di un nuovo Club sorto da pochi giorni a Milano. Il nuovo Club, nato da una deplorevole scissura che non pochi malintesi
+             hanno creato in seno al Milan Club, è composto in maggioranza di attivi footballey e di parecchi appassionati. Il massimo buon volere
+             e i migliori propositi sono le basi della nuova società che per ora promette poche ma buone cose. Scopo precipuo del nuovo Club è di 
+             facilitare l'esercizio del calcio agli stranieri residenti a Milano e diffondere la passione fra la gioventù Milanese, alla quale
+             vanno fatte speciali e assai lodevoli felicitazioni. I nostri auguri di vita lunga, prospera e, quel che più conta, concorde vadano
+             al nuovo sodalizio, che troverà certo nei suoi fondatori quella buona volontà necessaria perché i buoni intendimenti manifestati
+             abbiano il miglior successo.»</i>
+         <p> (La Gazzetta dello Sport, marzo 1908)</p>
+        </div>   </div>
+    </div>
+  
     </main>
+    <div class="banner">
+     
+        <h2>Registrati al sito</h2>
+        <p>Scendi in campo con noi!</p>
+         <p>   Commenta i loghi e raccontaci le tue storie</p>
+        <ul>
+            <li>💬 Lascia i tuoi commenti sui loghi</li>
+            <li>📣 Condividi i tuoi ricordi sul club nerazzurro!</li> 
+            <li>📥 Suggeriscici nuove informazioni</li>
+        </ul>
+        <button onclick="location.href='registrati.html'">Registrati</button>
+    </div>
+
     <footer>
         <div class="footer-container">
-            <p>&copy; 2025 Storia dei Loghi dell'Inter. Tutti i diritti riservati.</p>
+            <p>&copy; 2025 Storia dei Loghi dell'Inter.</p>
             <ul class="footer-links">
                 <li><a href="privacy.html">Privacy Policy</a></li>
                 <li><a href="termini.html">Termini e Condizioni</a></li>
@@ -156,8 +246,74 @@
             </div>
         </div>
     </footer>
-    </body>
-    </html>
+    <script>
+        function toggleMenu() {
+            const sideMenu = document.getElementById('sideMenu');
+            sideMenu.classList.toggle('open');
+        }
     
+        document.addEventListener('DOMContentLoaded', function() {
+            // CONTROLLA IL LOGIN DAL localStorage (è persistente)
+            const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+    
+            const userIcon = document.getElementById('userIcon');
+            const logoutText = document.getElementById('logoutText');
+            const sidebarLoginLink = document.getElementById('sidebarLoginLink');
+            const sidebarLogoutLink = document.getElementById('sidebarLogoutLink');
+    
+            // AGGIORNA LA UI in base allo stato login
+            if (isLoggedIn) {
+                if (logoutText) logoutText.style.display = 'inline';
+                if (sidebarLoginLink) sidebarLoginLink.style.display = 'none';
+                if (sidebarLogoutLink) sidebarLogoutLink.style.display = 'inline';
+            } else {
+                if (logoutText) logoutText.style.display = 'none';
+                if (sidebarLoginLink) sidebarLoginLink.style.display = 'inline';
+                if (sidebarLogoutLink) sidebarLogoutLink.style.display = 'none';
+            }
+    
+            // GESTIONE LOGIN/LOGOUT cliccando sull'icona utente
+            if (userIcon) {
+                userIcon.addEventListener('click', function(event) {
+                    if (isLoggedIn) {
+                        event.preventDefault();
+                        if (confirm("Sei sicuro di voler effettuare il logout?")) {
+                            localStorage.removeItem('isLoggedIn');
+                            window.location.href = "Index.html";
+                        }
+                    } else {
+                        window.location.href = "accedi.html";
+                    }
+                });
+            }
+    
+            // LOGOUT dalla sidebar
+            if (sidebarLogoutLink) {
+                sidebarLogoutLink.addEventListener('click', function(event) {
+                    event.preventDefault();
+                    if (confirm("Sei sicuro di voler effettuare il logout?")) {
+                        localStorage.removeItem('isLoggedIn');
+                        window.location.href = "Index.html";
+                    }
+                });
+            }
+    
+            // LOGIN quando sei sulla pagina accedi.html
+            if (window.location.pathname.includes('accedi.html')) {
+                localStorage.setItem('isLoggedIn', 'true');
+                window.location.href = "Index.html";
+            }
+    
+            // GESTIONE CLICK CARD LOGHI (se ci sono)
+            const logoCards = document.querySelectorAll('.logo-card');
+            logoCards.forEach(card => {
+                card.onclick = function() {
+                    const href = card.getAttribute('data-href');
+                    window.location.href = href;
+                };
+            });
+        });
+    </script>
+      
 </body>
 </html>
