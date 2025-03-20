@@ -1,18 +1,35 @@
 /* styles.css */
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #000;
+            background:url('https://www.inter.it/static/media/bg.3f8f3d3c.jpg');
     color: white;
     margin: 0;
     padding: 0;
 }
-
+body {
+    font-size: 18px;
+  }
+  
+  @media (max-width: 768px) {
+    body {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    body {
+      font-size: 14px;
+    }
+  }
+  
 .navbar {
     display: flex;
     justify-content: space-between;
-    padding: 15px 30px;
-    background-color: #003399;
+    padding: 20px 30px;
+    background-color: rgb(1, 30, 160, 255);
+    position: relative;
 }
+
 
 .nav-links {
     list-style: none;
@@ -26,13 +43,86 @@ body {
     font-weight: bold;
 }
 
+.search-bar {
+    width: 50%; /* Larghezza della search bar */
+    margin: 20px auto; /* Centra orizzontalmente */
+    text-align: center; /* Centra il testo all'interno */
+}
+.search-bar input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+}
 .hero {
     text-align: center;
-    padding: 50px;
-    background-image: url('https://www.inter.it/static/media/bg.3f8f3d3c.jpg');
-    background-size: cover;
+    padding: 150px 20px 130px; /* Aumentato il padding per più spazio */
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.5);
+
+} .hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color:#FFD700;
+}  .hero p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-weight: bold;
+    color:#FFD700;
+}   .hero .cta-button {
+    background-color: #0120a0; /* Colore nerazzurro */
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
+.hero .cta-button:hover {
+    background-color: #00196b; /* Colore più scuro al passaggio del mouse */
+} .hero2 {
+    text-align: center;
+    padding: 50px 20px 80px; /* Aumentato il padding per più spazio */
+    position: relative;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.7);
+    margin-bottom:40px;
+}   .hero2 h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color:#FFD700;
+    margin-top:50px;
+}  .hero2 p {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color:#FFD700;
+   font-weight: bold;
+} .hero2 .cta-button {
+    background-color: #0120a0; /* Colore nerazzurro */
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top:50px;
+}
+
+.hero2 .cta-button:hover {
+    background-color: #00196b; /* Colore più scuro al passaggio del mouse */
+}
 .card-container {
     display: flex;
     gap: 20px;
@@ -48,11 +138,10 @@ body {
     text-align: center;
 }
 footer {
-    background: black;
-    color: white;
+    background: rgb(1, 30, 160, 255);
+    color: #FFD700;
     text-align: center;
     padding: 20px;
-    margin-top: 20px;
 }
 .footer-container {
     max-width: 800px;
@@ -66,11 +155,294 @@ footer {
     gap: 15px;
 }
 .footer-links li a {
-    color: white;
+    color: #FFD700;
     text-decoration: none;
 }
 .social-icons a {
-    color: white;
+    color: #FFD700;
     text-decoration: none;
     margin: 0 10px;
+}
+.banner {
+    background: rgba(0,0, 0, 0.2);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+    height: 300px; /* Imposta un'altezza adeguata */
+}
+.banner h2 {
+    font-size: 34px;
+    color: #FFD700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ombra scura */
+
+}
+.banner p {
+    font-size: 18px;
+    margin: 10px 0;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ombra scura */
+
+
+}
+.banner ul {
+    list-style: none;
+    padding: 0;
+}
+.banner ul li {
+    font-size: 16px;
+    margin: 5px 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ombra scura */
+
+}
+.banner button {
+    background: #28a745;
+    border: none;
+    padding: 15px 30px;
+    font-size: 18px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.banner button:hover {
+    background: #218838;
+}.history-section {
+    background: rgba(0, 0, 0, 0.7);
+    width: 100%;
+  
+    padding-top: 70px; /* 🔥 Aggiungi padding per spostare il titolo verso il basso */
+}
+
+.history-section .title {
+    color: #FFD700;
+    font-size: 40px;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.history-section .content {
+    display: flex;
+    align-items: flex-start;
+    gap: 30px;
+    max-width: 1200px;   /* 🔥 Limita davvero la larghezza */
+    margin: 0 auto;      /* 🔥 CENTRA TUTTO */
+}
+
+.history-section .images-column {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.history-section .images-column img {
+    width: 300px;      /* 🔥 Non superare questa larghezza */
+    height: auto;
+    border-radius: 10px;
+    object-fit: cover;
+    margin-top:30px;
+}
+
+.history-section .text {
+    max-width: 900px;
+    color: white;
+    text-align: left;
+    font-size: 18px;
+    line-height: 1.6;
+}
+
+.menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+}
+
+.menu-button {
+    position: fixed; /* Cambiato da absolute a fixed */
+    top: 10px;
+    left: 20px;
+    background: rgb(1, 30, 160, 255);
+    color: white;
+    padding: 10px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 1001; 
+    font-weight:bold;
+}     .menu-button:hover {
+    background: rgb(1, 21, 109); /* Nero scuro al passaggio del mouse */
+    transition: background 0.3s ease;
+} .user-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    cursor: pointer;
+    color:white;
+}
+.user-icon i {
+    font-size: 24px;
+    color:white;
+}.fanbox-section, .comments-section {
+    text-align: left;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+    max-width: 570px;
+    margin: 30px auto;  /* Centra le sezioni */
+}
+
+.fanbox-form textarea,
+.comment-form textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: none;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    box-sizing: border-box;
+}
+
+.fanbox-form input[type="file"] {
+    margin-bottom: 10px;
+}
+
+.fanbox-form button,
+.comment-form button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background: #007BFF;
+    color: white;
+    cursor: pointer;
+}
+
+.fanbox-form button:hover,
+.comment-form button:hover {
+    background: #0056b3;
+}
+
+.fanbox-posts, .comment-list {
+    margin-top: 20px;
+}
+
+.fanbox-post, .comment {
+    background: rgba(255, 255, 255, 0.3);
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.fanbox-post img {
+    max-width: 100%;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.fanbox-post .author, .comment .author {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.fanbox-post .date {
+    font-size: 0.9em;
+    color: #ccc;
+    margin-bottom: 10px;
+}
+.menu {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: rgba(1, 30, 160, 1);
+    font-weight: bold;
+    padding-top: 60px;
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+}
+.menu.open {
+    left: 0;
+}
+.close-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1001;
+}
+.close-button:hover {
+    color: #ccc;
+}
+.menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+}
+.menu-button {
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    background: rgb(1, 30, 160, 255);
+    color: white;
+    padding: 10px;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 1001;
+    font-weight: bold;
+}.menu-button:hover {
+background: rgb(1, 21, 109); /* Nero scuro al passaggio del mouse */
+transition: background 0.3s ease;
+}  .arrow {
+    position: absolute;
+    top: 300px;
+    width: 40px;  
+    height: 40px;
+    transform: translateY(-50%);
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+    background: rgba(0,0, 0, 0.8);
+    padding: 10px 15px;
+    border-radius: 50%;
+}
+.arrow:hover {
+background: rgba(0, 0, 0, 1); /* Nero scuro al passaggio del mouse */
+transition: background 0.3s ease;
+}
+
+.a:hover {
+background: rgba(255, 255, 255, 0.2); /* Evidenzia con un effetto chiaro */
+padding: 5px 10px;
+border-radius: 5px;
+transition: background 0.3s ease;
+} .arrow-left {
+    left: -50px; 
+}
+.arrow-right {
+    right: -50px; 
+}
+.a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+.login-prompt {
+    color: #ffcc00;
+    font-weight: bold;
+    margin-top: 10px;
 }
