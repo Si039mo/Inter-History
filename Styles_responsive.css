@@ -261,12 +261,14 @@ footer {
     line-height: 1.6;
 }
 
-.menu a {
-    display: block;
-    color: white;
-    text-decoration: none;
-    padding: 15px;
+.menu {
+  left: -250px;
+  transition: left 0.3s ease-in-out;
 }
+.menu.open {
+  left: 0;
+}
+
 
 .menu-button {
     position: fixed; /* Cambiato da absolute a fixed */
