@@ -584,3 +584,22 @@ img {
     padding-bottom: 56.25% !important;
   }
 }
+
+
+/* ✅ RIMOZIONE SFONDO E MIGLIORAMENTO VIDEO SU MOBILE */
+@media (max-width: 768px) {
+  .video-section {
+    background: none !important;
+    padding: 30px 10px !important;
+  }
+
+  .video-wrapper {
+    width: 100% !important;
+    padding-bottom: 56.25% !important;
+    max-width: 100% !important;
+  }
+
+  .video-container {
+    padding: 0 !important;
+  }
+}
