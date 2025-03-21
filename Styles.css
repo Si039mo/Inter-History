@@ -454,24 +454,27 @@ transition: background 0.3s ease;
     color: #ffcc00;
     font-weight: bold;
     margin-top: 10px;
-}/* ✅ SISTEMA FRECCE DI NAVIGAZIONE SU MOBILE */
+}/* ✅ RIPOSIZIONAMENTO FRECCE VICINO AL LINK "TORNA AI LOGHI" SU MOBILE */
 @media (max-width: 768px) {
   .arrow {
-    top: auto;
-    bottom: 80px;
+    position: relative;
+    top: 0;
+    bottom: auto;
+    margin: 10px 5px;
     transform: none;
-    font-size: 24px;
-    width: 35px;
-    height: 35px;
-    padding: 8px 10px;
-    z-index: 1001;
+    display: inline-block;
+    font-size: 22px;
+    width: auto;
+    height: auto;
+    padding: 5px 10px;
   }
 
   .arrow-left {
-    left: 10px !important;
+    left: auto !important;
   }
 
   .arrow-right {
-    right: 10px !important;
+    right: auto !important;
   }
 }
+
