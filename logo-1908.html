@@ -347,5 +347,21 @@
             });
           };
         </script>
+    <script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const sideMenu = document.getElementById('sideMenu');
+    const menuLinks = sideMenu.querySelectorAll('a');
+
+    // Chiude il menu su mobile quando si clicca un link
+    menuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768 && sideMenu.classList.contains('open')) {
+          sideMenu.classList.remove('open');
+        }
+      });
+    });
+  });
+</script>
+
 </body>
 </html>
