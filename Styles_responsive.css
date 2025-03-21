@@ -567,3 +567,20 @@ img {
     background: none !important;
   }
 }
+
+
+/* ✅ VIDEO RESPONSIVE PER MOBILE */
+@media (max-width: 768px) {
+  .video-wrapper {
+    width: 100% !important;
+    padding-bottom: 56.25% !important; /* Proporzione 16:9 */
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .video-wrapper {
+    width: 100% !important;
+    padding-bottom: 56.25% !important;
+  }
+}
