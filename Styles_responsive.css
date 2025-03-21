@@ -534,3 +534,19 @@ img {
     max-width: 100%;
     height: auto;
 }
+
+
+/* ✅ ADATTAMENTO SFONDO PER MOBILE */
+@media (max-width: 768px) {
+  body {
+    background: url('inter.png') no-repeat center top;
+    background-size: contain;
+    background-attachment: scroll;
+  }
+
+  body::before {
+    background: url('inter.png') no-repeat center top;
+    background-size: contain;
+    background-attachment: scroll;
+  }
+}
