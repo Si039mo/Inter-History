@@ -550,3 +550,20 @@ img {
     background-attachment: scroll;
   }
 }
+
+
+/* ✅ SFONDO NERO PER DISPOSITIVI MOBILI */
+@media (max-width: 768px) {
+  body {
+    background: #000 !important;
+    background-attachment: scroll !important;
+  }
+
+  body::before {
+    background: none !important;
+  }
+
+  body::after {
+    background: none !important;
+  }
+}
