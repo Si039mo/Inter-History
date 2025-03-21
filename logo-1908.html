@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Logo Inter 1908</title>
-    <link rel="stylesheet" href="Styles.css">
-    <link rel="stylesheet" href="/Inter-History/Styles.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/Inter-History/Style.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -58,6 +58,7 @@
         <button class="close-button" onclick="toggleMenu()">X</button>
         <a href="Index.html">Home</a>
         <a href="loghi.html">Loghi</a>
+        <a href="about.html">About</a>
         <a href="accedi.html" id="sidebarLoginLink">Accedi</a> 
         <a href="#" id="sidebarLogoutLink" style="display: none;">Logout</a>
         <div class="search-bar">
@@ -324,5 +325,27 @@
             
         });
     </script>
+      <button id="topBtn">↑</button>
+
+      <script>
+          const topBtn = document.getElementById("topBtn");
+        
+          // Mostra il bottone quando scrolli giù
+          window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+              topBtn.style.display = "block";
+            } else {
+              topBtn.style.display = "none";
+            }
+          };
+        
+          // Torna su con effetto smooth
+          topBtn.onclick = function() {
+            window.scrollTo({
+              top: 0,
+              behavior: "smooth"
+            });
+          };
+        </script>
 </body>
 </html>

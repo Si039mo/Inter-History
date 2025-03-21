@@ -138,6 +138,7 @@ body::after {
         <button class="close-button" onclick="toggleMenu()">X</button>
         <a href="loghi.html">Loghi</a>
         <a href="#Fondazione">Storia</a>
+        <a href="about.html">About</a>
         <a href="accedi.html?redirect=Index.html" id="sidebarLoginLink">Accedi</a>
                 <a href="#" id="sidebarLogoutLink" style="display: none;">Logout</a>
         <div class="search-bar">
@@ -247,6 +248,7 @@ body::after {
             </div>
         </div>
     </footer>
+    
     <script>
         function toggleMenu() {
             const sideMenu = document.getElementById('sideMenu');
@@ -315,6 +317,28 @@ body::after {
             });
         });
     </script>
+    <button id="topBtn">↑</button>
+
+    <script>
+        const topBtn = document.getElementById("topBtn");
+      
+        // Mostra il bottone quando scrolli giù
+        window.onscroll = function() {
+          if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            topBtn.style.display = "block";
+          } else {
+            topBtn.style.display = "none";
+          }
+        };
+      
+        // Torna su con effetto smooth
+        topBtn.onclick = function() {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+        };
+      </script>
       
 </body>
 </html>

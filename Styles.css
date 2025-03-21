@@ -6,7 +6,31 @@ body {
     margin: 0;
     padding: 0;
 }
-
+#topBtn {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background-color: rgba(1, 30, 160, 0.7);
+    color: white;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    display: none; /* Nascosto di default */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.3s;
+  }
+  
+  #topBtn:hover {
+    background-color: rgba(1, 30, 160, 1);
+  }
+  
+  
 .navbar {
     display: flex;
     justify-content: space-between;
