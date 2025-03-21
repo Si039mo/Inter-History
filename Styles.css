@@ -454,4 +454,24 @@ transition: background 0.3s ease;
     color: #ffcc00;
     font-weight: bold;
     margin-top: 10px;
+}/* ✅ SISTEMA FRECCE DI NAVIGAZIONE SU MOBILE */
+@media (max-width: 768px) {
+  .arrow {
+    top: auto;
+    bottom: 80px;
+    transform: none;
+    font-size: 24px;
+    width: 35px;
+    height: 35px;
+    padding: 8px 10px;
+    z-index: 1001;
+  }
+
+  .arrow-left {
+    left: 10px !important;
+  }
+
+  .arrow-right {
+    right: 10px !important;
+  }
 }
