@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About - InterHistory</title>
     <link rel="stylesheet" href="Styles.css">
-    <link rel="stylesheet" href="Styles_responsive.css">
+    <link rel="stylesheet" href="/Inter-History/Styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         body {
@@ -67,6 +67,8 @@
     <div class="about-container">
         <h1>About InterHistory</h1>
         <pre>
+
+
 <strong>IDEA</strong>
 
 
@@ -74,11 +76,11 @@ L’idea è stata quella di realizzare una web application che permettesse agli 
 
 L’applicazione è sviluppata per garantire un accesso facile e veloce ai contenuti che interessano all’utente; nella landing page
 l’utente può:
- -	accedere o registrarsi tramite il formo di autentificazione; 
+ -	accedere o registrarsi tramite il form di autentificazione; 
  -	esplorare la sezione loghi; 
  -	consultare la storia della fondazione.
 
-Una volta effettuato il login (gestito via localStorage) la home apparirà nello stesso modo ma una volta cliccato sul logo scelto
+Dopo aver effettuato il login (gestito via localStorage) la home apparirà nello stesso modo ma una volta cliccato sul logo scelto
 sarà possibile commentare e raccontare un’esperienza utilizzando l’area dedicata.
 La side navigation bar consente l’accesso rapido alle sezioni principali:
 -	Loghi (con card interattive e filtrabili),
@@ -86,34 +88,26 @@ La side navigation bar consente l’accesso rapido alle sezioni principali:
 -   About (Web project plan)
 -	Login/Logout dinamico.
 
-Per lo sviluppo è stato utilizzato Visual Studio Code come IDE, con deploy su GitHub Pages per garantire la pubblicazione e
-la versione online responsive.
+Per lo sviluppo è stato utilizzato Visual Studio Code come IDE, con deploy su GitHub Pages per garantire la pubblicazione e la versione online responsive.
 
 <strong> BRIEF</strong> 
 
-<strong> Finalità e obiettivi:</strong>  InterHistory offre agli appassionati di calcio e di storia la possibilità di visualizzare e commentare
-l’evoluzione nel tempo di un club che conta milioni di tifosi in italia e nel mondo. Il progetto ha come obiettivo quello di
-connettere generazioni lontane nel tempo ma vicine nella passione per la squadra nerazzurra: i tifosi più anziani hanno molte
-esperienze da raccontare e molti giovani appassionati sarebbero curiosi di scoprire come si presenteva il loro club in passato.
+<strong>Finalità e obiettivi:</strong>  InterHistory offre agli appassionati di calcio e di storia la possibilità di visualizzare e commentare l’evoluzione nel tempo di un club che conta milioni di tifosi in italia e nel mondo. Il progetto ha come obiettivo quello di
+connettere generazioni lontane nel tempo ma vicine nella passione per la squadra nerazzurra, i tifosi più anziani hanno molte esperienze da raccontare e molti giovani appassionati sarebbero curiosi di scoprire come si presenteva il loro club in passato.
 
-<strong> Pubblico di riferimento:</strong>  la piattaforma è ideata per essere utilizzata dai tifosi dell’inter di ogni età.
+<strong>Pubblico di riferimento:</strong>  la piattaforma è ideata per essere utilizzata dai tifosi dell’inter di ogni età.
             
-È sviluppata per essere intuitiva e allo stesso tempo coinvolgente in modo da attirare sia un pubblico più giovane che di età
-più avanzata.
-Gli appassionati più anziani del club nerazzurro possono condividere i propri ricordi legati a partite o avvenimenti riguardanti 
-il periodo selezionato e i più giovani hanno la possibilità di conoscere i campioni del passato attraverso le parole di tifosi 
-che li hanno visti.
+È sviluppata per essere intuitiva e allo stesso tempo coinvolgente in modo da attirare sia un pubblico più giovane che di età più avanzata.
+Gli appassionati più anziani del club nerazzurro possono condividere i propri ricordi legati a partite o avvenimenti riguardanti il periodo selezionato e i più giovani hanno la possibilità di conoscere i campioni del passato attraverso le parole di tifosi che li hanno visti.
 
 <strong>Accesso alla risorsa:</strong> InterHistory è progettata per il responsive web design (RWD):
 -	Ottimizzata per PC/Desktop;
 -	Accessibile da dispositivi mobili (smartphone e tablet)
 
-Il pubblico di età maggiore è probabile che usi l’applicazione da PC quindi l’interfaccia è stata sviluppata con un occhio di
-riguardo ai dispositivi desktop in modo da rendere il sito facile da usare anche per chi ha meno familiarità con la tecnologia.
-Contenuti: la piattaforma si concentra su content management statico (testi e immagini storiche). 
-La cronistoria nerazzurra è facilmente accessibile tramite le card dei loghi e una sezione dedicata a un approfondimento sulla
-fase embrionale della storia dell’inter. Troviamo anche media embedding (video Youtube) e interactive content attraverso
-la sezione commenti e FanBox.
+Il pubblico di età maggiore è probabile che usi l’applicazione da PC quindi l’interfaccia è stata sviluppata con un occhio di riguardo ai dispositivi desktop in modo da rendere il sito facile da usare anche per chi ha meno familiarità con la tecnologia.
+
+<strong>Contenuti:</strong> la piattaforma si concentra su content management statico (testi e immagini storiche). 
+La cronistoria nerazzurra è facilmente accessibile tramite le card dei loghi e una sezione dedicata a un approfondimento sulla fase embrionale della storia dell’inter. Troviamo anche media embedding (video Youtube) e interactive content attraverso la sezione commenti e FanBox.
 
 <strong>BENCHMARK</strong>
 Idea: la storia dell’inter è disponibile in diversi siti web, incluso quello ufficiale del club, con uno stile poco intuitivo e con una distribuzione delle informazioni che può risultare poco leggibile. InterHistory rispetto a questi portali si distingue per l’idea delle card che permette all’utente di trovare in modo immediato le informazioni riguardo il logo e quindi il periodo desiderato. Oltre a questo, c’è un’interazione diretta con contenuti generati dagli utenti e un’esperienza personalizzata e costruita per evitare la struttura cronologica verticale classica.
@@ -286,6 +280,7 @@ FanBox: la fanBox è il mezzo usato dagli utenti registrati per partecipare atti
 
 L’architettura del sito è strutturata dando priorità ai dispositivi desktop (desktop-first), ad esempio, il sideMenu (Hamburger menu) è a sinistra e non a destra. Il menù di navigazione primaria è un elemento fondamentale che permette all’utente di accedere con facilità ai principali contenuti del sito. La pagina dei loghi è infatti raggiungibile sia dal sideMenu che attraverso un pulsante presente nella Home. 
 In generale lo sviluppo delle pagine è stato pensato per facilitare l’uso delle funzioni principali:
+
     1.	Il form accedi è raggiungibile molto velocemente attraverso la user icon o il sideMenu;
 
     2.	è possibile tornare alla home in diversi modi sia dalle infoBox che dalla pagina dei loghi senza l’uso delle bread crumbs;
@@ -303,7 +298,7 @@ Nella home è stata inserita una sezione dedicata a dei video-aggiornamento che 
 Colori: i colori principalmente usati sono quelli sociali dell’inter: nero, blu e oro.
 
 Attraverso il loro uso combinato ho cercato di creare contrasti e stacchi da una sezione all’altra:
-    1.	 Ho usato delle ombreggiature nere per gli sfondi, il blu per la nav bar e l’oro per i titoli;
+    1.	Ho usato delle ombreggiature nere per gli sfondi, il blu per la navbar e l’oro per i titoli;
     2.	Le cards (nere) e i pulsanti (blu e bianchi) presentano microinterazioni (hover effect) per donare maggiore dinamicità alle pagine;
     3.	Le ombreggiature inserite creano profondità e stacchi visivi.
 
@@ -314,6 +309,7 @@ Anche per le scritte ho usato principalmente la stessa selezione di colori: i ti
 Strumenti di Browsing:</strong>
 
 Per quanto riguarda la navigazione e gli strumenti di browsing utilizzati nel sito InterHistory, sono stati implementati:
+
 -	 Menu laterale a scomparsa (Side Navigation) disponibile in ogni pagina, che consente di spostarsi rapidamente tra: 
   o	Home
   o	Storia della fondazione
@@ -337,6 +333,7 @@ In homepage, oltre alla descrizione storica, è presente un pulsante call-to-act
 <strong>Strumenti di Interazione</strong>
 
 Durante la realizzazione del progetto sono stati impiegati diversi strumenti per rendere l’esperienza dell’utente coinvolgente e dinamica:
+
 -	 Bottoni interattivi per navigare tra le pagine, tra cui il pulsante "Scopri i Loghi", il pulsante di registrazione e i pulsanti di login/logout.
 
 -	 Card dinamiche nella pagina dei loghi, cliccabili e con hover effect, che stimolano l’interazione visuale.
@@ -345,6 +342,7 @@ Durante la realizzazione del progetto sono stati impiegati diversi strumenti per
   o	Commentare i loghi
   o	Raccontare esperienze personali
   o	Caricare immagini e condividere ricordi
+
 -	 Navigazione sequenziale tra le pagine dei loghi tramite frecce direzionali (➡) che permettono di scorrere cronologicamente la storia degli stemmi.
 
 -	 Icone social posizionate nel footer, per connettere l’utente ai principali canali social (Facebook, Twitter, Instagram).
