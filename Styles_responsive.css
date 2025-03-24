@@ -178,7 +178,7 @@ footer {
     text-align: center;
     padding: 60px 20px;
     position: relative;
-    height: 300px; /* Imposta un'altezza adeguata */
+    height: 350px; /* Imposta un'altezza adeguata */
 }
 .banner h2 {
     font-size: 34px;
@@ -219,7 +219,7 @@ footer {
 }.history-section {
     background: rgba(0, 0, 0, 0.7);
     width: 100%;
-  
+   height: 800px;
     padding-top: 70px; /* 🔥 Aggiungi padding per spostare il titolo verso il basso */
 }
 
@@ -261,14 +261,12 @@ footer {
     line-height: 1.6;
 }
 
-.menu {
-  left: -250px;
-  transition: left 0.3s ease-in-out;
+.menu a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px;
 }
-.menu.open {
-  left: 0;
-}
-
 
 .menu-button {
     position: fixed; /* Cambiato da absolute a fixed */
