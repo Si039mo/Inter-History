@@ -309,5 +309,28 @@
             
         });
     </script>
+    <button id="topBtn">↑</button>
+
+    <script>
+        const topBtn = document.getElementById("topBtn");
+      
+        // Mostra il bottone quando scrolli giù
+        window.onscroll = function() {
+          if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+            topBtn.style.display = "block";
+          } else {
+            topBtn.style.display = "none";
+          }
+        };
+      
+        // Torna su con effetto smooth
+        topBtn.onclick = function() {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+          });
+        };
+      </script>
+      
 </body>
 </html>
