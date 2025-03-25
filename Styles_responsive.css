@@ -219,7 +219,8 @@ footer {
 }.history-section {
     background: rgba(0, 0, 0, 0.7);
     width: 100%;
-   height: 800px;
+        height: auto; 
+        padding-bottom: 40px; /* margine inferiore per staccarla dal banner */
     padding-top: 70px; /* 🔥 Aggiungi padding per spostare il titolo verso il basso */
 }
 
@@ -506,9 +507,13 @@ line-height: 24px; /* Distanza fissa tra le righe */
     }
 
     .menu {
-        width: 100%;
-    }
-
+        left: -100vw; /* nasconde il menu completamente */
+        width: 100vw;
+      }
+    
+      .menu.open {
+        left: 0;
+      }
     .hero h1 {
         font-size: 2rem;
     }
