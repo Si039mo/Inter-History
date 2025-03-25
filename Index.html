@@ -42,43 +42,7 @@ body::after {
     background: rgba(0, 0, 0, 0.5); /* Ombreggiatura nera con opacità 0.6 */
     z-index: -1; /* Manda l'ombreggiatura dietro al contenuto */
 }
- .menu {
-    position: fixed;
-    top: 0;
-    left: -250px; /* Menu nascosto inizialmente */
-    width: 250px;
-    height: 100%;
-    background: rgba(1, 30, 160, 1); /* Colore di sfondo */
-    font-weight: bold;
-    padding-top: 60px; /* Spazio per il close button */
-    transition: left 0.3s ease-in-out; /* Animazione */
-    z-index: 1000;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.menu.open {
-    left: 0; /* Mostra il menu */
-}
-
-.close-button {
-    position: absolute;
-    top: 20px; /* Distanza dal bordo superiore */
-    right: 20px; /* Distanza dal bordo destro */
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    padding: 0;
-    z-index: 1001; /* Assicura che il pulsante sia sopra il menu */
-}
-
-        .close-button:hover {
-    color: #ccc; /* Cambia colore al passaggio del mouse */
-}    .video-section {
+   .video-section {
     background: url('coreo3.webp') center/cover no-repeat fixed;
     padding: 70px;
 }
